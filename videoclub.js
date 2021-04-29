@@ -86,37 +86,25 @@ let videoclub = {
   ],
 };
 
-function films(array) {
-  for (i = 0; i < videoclub.peliculas.length; i++) {
-    videoclub.peliculas[i].titulo;
-    videoclub.peliculas[i].sinopsis;
-    videoclub.peliculas[i].cartel;
-    return;
-  }
+let parrafo = "";
+
+for (let i = 0; i < videoclub.peliculas.length; i++) {
+  parrafo += crearTarjeta(
+    videoclub.peliculas[i].titulo,
+    videoclub.peliculas[i].sinopsis,
+    videoclub.peliculas[i].cartel
+  );
 }
 
-films(videoclub.peliculas);
-
-function cards(array2) {
-  let cards;
-  for (i = 0; i < videoclub.peliculas.length; i++) {
-    {
-      cards = document.getElementById("div").innerHTML += `
-    <div class="card">   
-      
-      <div class="container">
-            <h1>Cartelera</h1>       
-            <img class="card-img" src="${videoclub.peliculas[i].cartel}">            
-            <div class="card-hover">
-                <h4>${videoclub.peliculas[i].titulo}</h4>
-                <p>${videoclub.peliculas[i].sinopsis}</p>
-              </div>
-        </div>          
-    </div>
-            `;
-    }
-  }
-  return cards;
+function crearTarjeta(titulo, sinopsis, cartel) {
+  return `
+<div class="card">
+  <img src="${cartel}" alt="Cartel" style="width:100%"/>
+  <div class="container">
+    <h4><b>${titulo}</b></h4>
+    <p>${sinopsis}</p>
+  </div>
+</div>`;
 }
 
-cards(videoclub.peliculas);
+document.getElementById("catalogo").innerHTML = parrafo;
