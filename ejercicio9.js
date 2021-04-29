@@ -1,10 +1,12 @@
-let numero = parseInt(window.prompt('Escribe un número entero para calcular el número de cifras'))
+let num = parseInt(window.prompt("Introduce un número"));
 
-function sumar(valor) {
-  let suma = 0;
-  for (let i = 0; i < valor.length; i++) {
-    suma += parseInt(valor[i]);
+function numeroCifras(numero) {
+  if (numero >= 0) {
+    let cif = numero.toString();
+    let cifras = cif.length;
+    return window.alert(`Las cifras del número ${num} son ${cifras}`);
+  } else {
+    return "El número introducido es negativo";
   }
 }
-
-window.alert(sumar(`El resultado de ${numero} es ${valor}`))
+window.alert(numeroCifras(num));

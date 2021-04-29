@@ -1,17 +1,10 @@
-let number = parseInt(window.prompt("Escribe un número"));
-let number2 = parseInt(window.prompt("Escribe otro número"));
+do {
+  let num1 = parseInt(window.prompt("Introduce un número"));
+  let num2 = parseInt(window.prompt("Introduce otro número"));
 
-function division(num,num2){
-    num/num2
-    window.alert(num/num2)
+  window.alert(dividir(num1, num2));
+} while (num2 !== 0);
+
+function dividir(numero1, numero2) {
+  return numero1 / numero2;
 }
-division(number,number2)
-
-let number3 = parseInt(window.prompt("Escribe un número"));
-let number4 = parseInt(window.prompt("Escribe otro número"));
-
-function division(num3,num4){
-    (num3!==0 || num4!==0)
-    window.alert(num3/num4)
-}
-division(number3,number4)
